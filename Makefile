@@ -61,6 +61,9 @@ FRP_COMPONENTS:=frpc frps
 
 $(foreach component,$(FRP_COMPONENTS), \
   $(eval $(call frp/templates,$(component))) \
-  $(eval $(call GoBinPackage,$(component))) \
-  $(eval $(call BuildPackage,$(component))) \
 )
+
+$(eval $(call GoBinPackage,frpc))
+$(eval $(call BuildPackage,frpc))
+$(eval $(call GoBinPackage,frps))
+$(eval $(call BuildPackage,frps))
